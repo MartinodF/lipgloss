@@ -279,9 +279,7 @@ func (t *Table) String() string {
 
 			// if the height is larger than the number of rows, use the number
 			// of rows.
-			if availableLines > t.data.Rows() {
-				availableLines = t.data.Rows()
-			}
+			availableLines = min(availableLines, t.data.Rows())
 			sb.WriteString(t.constructRows(availableLines))
 
 		default:
@@ -319,7 +317,7 @@ func (t *Table) constructTopBorder() string {
 	if t.borderLeft {
 		s.WriteString(t.borderStyle.Render(t.border.TopLeft))
 	}
-	for i := 0; i < len(t.widths); i++ {
+	for i := range t.widths {
 		s.WriteString(t.borderStyle.Render(strings.Repeat(t.border.Top, t.widths[i])))
 		if i < len(t.widths)-1 && t.borderColumn {
 			s.WriteString(t.borderStyle.Render(t.border.MiddleTop))
@@ -338,7 +336,7 @@ func (t *Table) constructBottomBorder() string {
 	if t.borderLeft {
 		s.WriteString(t.borderStyle.Render(t.border.BottomLeft))
 	}
-	for i := 0; i < len(t.widths); i++ {
+	for i := range t.widths {
 		s.WriteString(t.borderStyle.Render(strings.Repeat(t.border.Bottom, t.widths[i])))
 		if i < len(t.widths)-1 && t.borderColumn {
 			s.WriteString(t.borderStyle.Render(t.border.MiddleBottom))
@@ -375,7 +373,7 @@ func (t *Table) constructHeaders() string {
 		if t.borderLeft {
 			s.WriteString(t.borderStyle.Render(t.border.MiddleLeft))
 		}
-		for i := 0; i < len(t.headers); i++ {
+		for i := range t.headers {
 			s.WriteString(t.borderStyle.Render(strings.Repeat(t.border.Top, t.widths[i])))
 			if i < len(t.headers)-1 && t.borderColumn {
 				s.WriteString(t.borderStyle.Render(t.border.Middle))
@@ -477,7 +475,7 @@ func (t *Table) constructRow(index int, isOverflow bool) string {
 
 	if t.borderRow && index < t.data.Rows()-1 {
 		s.WriteString(t.borderStyle.Render(t.border.MiddleLeft))
-		for i := 0; i < len(t.widths); i++ {
+		for i := range t.widths {
 			s.WriteString(t.borderStyle.Render(strings.Repeat(t.border.Bottom, t.widths[i])))
 			if i < len(t.widths)-1 && t.borderColumn {
 				s.WriteString(t.borderStyle.Render(t.border.Middle))
