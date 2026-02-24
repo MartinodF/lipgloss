@@ -109,7 +109,7 @@ func queryTerminal(
 			acc = append(acc, seq...)
 
 			if newState == ansi.NormalState {
-				if !filter(string(seq), pa) {
+				if !filter(string(acc), pa) {
 					return nil
 				}
 
