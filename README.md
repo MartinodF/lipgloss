@@ -1,13 +1,13 @@
 # Lip Gloss
 
-<p align="center">
-    <img src="https://github.com/user-attachments/assets/9dceabed-77ba-4ea9-8918-6c42caca0f21" width="350"><br>
+<p >
+    <img src="https://github.com/user-attachments/assets/d13bbe1a-d2b2-4d18-9302-419a0bc3f579" width="350"><br>
     <a href="https://github.com/charmbracelet/lipgloss/releases"><img src="https://img.shields.io/github/release/charmbracelet/lipgloss.svg" alt="Latest Release"></a>
     <a href="https://pkg.go.dev/charm.land/lipgloss/v2?tab=doc"><img src="https://godoc.org/github.com/golang/gddo?status.svg" alt="GoDoc"></a>
     <a href="https://github.com/charmbracelet/lipgloss/actions"><img src="https://github.com/charmbracelet/lipgloss/workflows/build/badge.svg" alt="Build Status"></a>
 </p>
 
-<p align="center">Style definitions for nice terminal layouts. Built with TUIs in mind.</p>
+<p>Style definitions for nice terminal layouts. Built with TUIs in mind.</p>
 
 ![Lip Gloss example](https://github.com/user-attachments/assets/92560e60-d70e-4ce0-b39e-a60bb933356b)
 
